@@ -2,7 +2,6 @@
   package="com.melilog">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -22,6 +21,8 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+      <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDpU3Jke8NJOy84X1l2bSPs7sJmuLceSgk" />
+
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import Login from './view/Login.js';
+import Login from './view/Main.js';
 
 
 const App: () => React$Node = () => {
