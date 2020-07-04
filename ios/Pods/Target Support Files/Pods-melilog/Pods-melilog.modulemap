@@ -1,0 +1,6 @@
+module Pods_melilog {
+  umbrella header "Pods-melilog-umbrella.h"
+
+  export *
+  module * { export * }
+}
