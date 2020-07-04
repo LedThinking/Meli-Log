@@ -7,16 +7,10 @@
  */
 
 import React from 'react';
-import Login from './view/Main.js';
-
+import Routes from './src/routes';
 
 const App: () => React$Node = () => {
-  return (
-      <Login/>
-
-  );
+  return <Routes />;
 };
-
-
 
 export default App;
