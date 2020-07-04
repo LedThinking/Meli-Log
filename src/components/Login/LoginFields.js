@@ -7,7 +7,12 @@ export default class LoginFields extends Component {
     return (
       <>
         <TextInput style={Style.fields} label="Email" mode={'outlined'} />
-        <TextInput style={Style.fields} label="Senha" mode={'outlined'} />
+        <TextInput
+          style={Style.fields}
+          label="Senha"
+          mode={'outlined'}
+          secureTextEntry={true}
+        />
         <TouchableOpacity style={Style.buttonAltenative}>
           <Text style={Style.textButton}>> Esqueceu sua senha?</Text>
         </TouchableOpacity>

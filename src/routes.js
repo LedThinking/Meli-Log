@@ -4,7 +4,7 @@ import Login from './screens/Login/index';
 import Main from './screens/Main/index';
 
 function routes() {
-  return <Main />;
+  return <Login />;
 }
 
 export default routes;
