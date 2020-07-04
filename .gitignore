@@ -60,6 +60,7 @@ node_modules
 .nvm
 /bots/node_modules/
 package-lock.json
+yarn.lock
 android/app/build
 # OS X
 .DS_Store
