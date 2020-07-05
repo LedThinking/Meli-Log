@@ -2,36 +2,37 @@ import React, {useState, useEffect} from 'react';
 import {FlatList, View, SafeAreaView, Text} from 'react-native';
 import {List, Button} from 'react-native-paper';
 
-import {useRoute} from '@react-navigation/native';
-
-import styles from '../Wallet/style';
+import styles from './style';
 
 const Wallet = () => {
-  const [order, setOrder] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [order, setOrders] = useState([]);
   const [allMoney, setallMoney] = useState(0);
-  const [loading, setLoading] = useState(false);
 
-  const response = useRoute().params.data;
-
-  async function loadOrders() {
-    if (loading) {
-      return;
+  // Gera 5 elementos aleatorios
+  function generateFakeData() {
+    let data = [];
+    for (var i = 0; i < 5; i++) {
+      data.push({
+        id: `${Math.random()}`,
+        title: 'Titulo do Item',
+        description: '01/01/1990',
+        value: 0.5,
+      });
     }
-    if (total > 0 && order.length === total) {
-      return;
-    }
-
-    setLoading(true);
-    setOrder([...order, ...response.encomendas]);
-    setTotal(response.data.total);
-
-    setLoading(false);
+    return data;
   }
 
+  // Chama a função para gerar 5 elementos e adiciona no estado "order" junto com todos os elementos que já estavam lá.
+  // Isso faz com que a lista sempre aumente a medida que o scroll desce.
+  function loadOrders() {
+    const response = generateFakeData();
+    setOrders([...order, ...response]);
+  }
+
+  // Executa o carregamento das orders na lista logo ao iniciar a tela;
   useEffect(() => {
     loadOrders();
-  }, [loadOrders]);
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -46,13 +47,13 @@ const Wallet = () => {
         showsVerticalScrollIndicator={false}
         onEndReached={loadOrders}
         onEndReachedThreshold={0.2}
-        data={response}
-        keyExtractor={response => String(response.encomendas)}
-        renderItem={({item: response}) => (
+        data={order}
+        keyExtractor={(item) => item.id}
+        renderItem={({item}) => (
           <List.Item
-            title={response.title}
-            description={[response.description, response.value]}
-            left={props => <List.Icon {...props} icon="box-cutter" />}
+            title={item.title}
+            description={`Data: ${item.description} | Valor: ${item.value}`}
+            left={(props) => <List.Icon {...props} icon="box-cutter" />}
           />
         )}
       />
