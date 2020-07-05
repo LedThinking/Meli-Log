@@ -1,10 +1,12 @@
 import * as React from 'react';
 import {BottomNavigation, Text} from 'react-native-paper';
-import Map from '../../components/Maps/index';
+
+import Map from '../../components/Maps/Map';
+import Wallet from '../Wallet/index';
 
 const MapRoute = () => <Map />;
 
-const WalletRoute = () => <Text>Teste</Text>;
+const WalletRoute = () => <Wallet />;
 
 const DeliveriesRoute = () => <Text>tesst</Text>;
 

@@ -19,14 +19,12 @@ export default class LoginFields extends Component {
             <Text style={Style.textButton}> &gt;Esqueceu sua senha?</Text>
           </TouchableOpacity>
         </View>
-
         <Button
           style={[Style.fields]}
           mode="contained"
           onPress={() => console.log('Pressed')}>
           Login{' '}
         </Button>
-
         <GoogleSigninButton
           style={[Style.button]}
           size={GoogleSigninButton.Size.Wide}
@@ -46,7 +44,7 @@ const Style = StyleSheet.create({
   container: {
     alignItems: 'center',
     flex: 0,
-  },  
+  },
   fields: {
     justifyContent: 'center',
     width: 370,
