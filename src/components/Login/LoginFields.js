@@ -26,7 +26,7 @@ const LoginFields = ({navigation}) => {
       <Button
         style={[Style.fields]}
         mode="contained"
-        onPress={() => console.log('Pressed')}>
+        onPress={() => navigation.navigate('Main')}>
         Login{' '}
       </Button>
 
