@@ -69,7 +69,7 @@ const Maps = () => {
         initialRegion={currentRegion}>
         {deliveries.map(delivery => (
           <Marker key={delivery.id} coordinate={delivery.position}>
-            <Avatar.Icon size={62} icon="package" />
+            <Avatar.Icon size={42} icon="package" />
             <Callout
               onPress={() => {
                 console.log('Clicou');
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
 
   callout: {
     width: 300,
-  }
+  },
 });
 
 export default Maps;

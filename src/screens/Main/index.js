@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {BottomNavigation, Text} from 'react-native-paper';
-import Map from '../../components/Maps/Map';
+import Map from '../../components/Maps/index';
 
 const MapRoute = () => <Map />;
 
@@ -17,6 +17,8 @@ const Main = () => {
     {key: 'wallet', title: 'Carteira', icon: 'wallet'},
     {key: 'deliveries', title: 'Entregas', icon: 'package'},
     {key: 'profile', title: 'Perfil', icon: 'tag-text-outline'},
+    {key: 'pr', title: 'Perfil', icon: 'tag-text-outline'},
+
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
