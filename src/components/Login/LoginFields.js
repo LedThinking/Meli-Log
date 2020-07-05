@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity,View} from 'react-native';
 import {Button, Divider, TextInput, Text} from 'react-native-paper';
+import {GoogleSigninButton } from '@react-native-community/google-signin';
+
 
 export default class LoginFields extends Component {
   render() {
     return (
-      <>
+      <View style={Style.container}>
         <TextInput style={Style.fields} label="Email" mode={'outlined'} />
         <TextInput
           style={Style.fields}
@@ -13,50 +15,70 @@ export default class LoginFields extends Component {
           mode={'outlined'}
           secureTextEntry={true}
         />
-        <TouchableOpacity style={Style.buttonAltenative}>
-          <Text style={Style.textButton}>> Esqueceu sua senha?</Text>
-        </TouchableOpacity>
+        <View  style={{width:370 }}>
+            <TouchableOpacity style={Style.buttonAltenative}>
+                <Text style={Style.textButton}> &gt;Esqueceu sua senha?</Text>
+            </TouchableOpacity>
+        </View>
+        
+        <Divider style={{height:5,backgroundColor:'red'}} />
+        <Divider />
+        <Divider />
+
 
         <Button
-          style={[Style.fields, Style.button]}
+          style={[Style.fields]}
           mode="contained"
           onPress={() => console.log('Pressed')}>
           Login{' '}
         </Button>
-        <Divider />
+
+        
+        <GoogleSigninButton
+            style={[Style.button]}
+
+            size={GoogleSigninButton.Size.Wide}
+     />        
+        
         <Button
-          style={[Style.fields, Style.button]}
-          mode="outlined"
-          onPress={() => console.log('Pressed')}>
-          Login com Google{' '}
-        </Button>
-        <Divider />
-        <Button
-          style={[Style.fields, Style.button]}
+          
+          style={[Style.fields]}
           mode="outlined"
           onPress={() => console.log('Pressed')}>
           Registrar{' '}
         </Button>
-      </>
+      </View>
     );
   }
 }
 
 const Style = StyleSheet.create({
+  container: {
+      alignItems: "center",
+      flex: 0
+  },  
   fields: {
-    margin: 10,
     justifyContent: 'center',
+    width: 370,
+    height: 50,
+    marginTop:10
+
   },
   button: {
-    padding: 2,
+    marginTop:10,
+    width: 377,
+    height: 55,
+    alignItems: 'center',
+
   },
   buttonAltenative: {
     alignItems: 'flex-end',
-    marginRight: 15,
-    marginBottom: 10,
+
   },
   textButton: {
     textDecorationLine: 'underline',
     color: '#0073CF',
+    marginTop:10
+
   },
 });
