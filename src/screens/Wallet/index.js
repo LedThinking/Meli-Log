@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import {FlatList, View, SafeAreaView, Text} from 'react-native';
 import {List, Button} from 'react-native-paper';
@@ -14,7 +15,7 @@ const Wallet = () => {
     for (var i = 0; i < 5; i++) {
       data.push({
         id: `${Math.random()}`,
-        title: 'Titulo do Item',
+        title: 'Encomenda Mercado Livre',
         description: '01/01/1990',
         value: 0.5,
       });
@@ -27,6 +28,14 @@ const Wallet = () => {
   function loadOrders() {
     const response = generateFakeData();
     setOrders([...order, ...response]);
+    loadMoney();
+  }
+
+  function loadMoney() {
+    order.map(item => {
+      const sum = item.value + allMoney;
+      setallMoney(sum);
+    });
   }
 
   // Executa o carregamento das orders na lista logo ao iniciar a tela;
@@ -38,7 +47,7 @@ const Wallet = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.Text}>R$ {allMoney} </Text>
-        <Button icon="account" style={styles.button} mode="contained">
+        <Button icon="card" style={styles.button} mode="contained">
           sacar{''}
         </Button>
       </View>
@@ -48,12 +57,12 @@ const Wallet = () => {
         onEndReached={loadOrders}
         onEndReachedThreshold={0.2}
         data={order}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
         renderItem={({item}) => (
           <List.Item
             title={item.title}
             description={`Data: ${item.description} | Valor: ${item.value}`}
-            left={(props) => <List.Icon {...props} icon="box-cutter" />}
+            left={props => <List.Icon {...props} icon="card" />}
           />
         )}
       />
