@@ -8,7 +8,7 @@ const MapRoute = () => <Map />;
 
 const WalletRoute = () => <Wallet />;
 
-const DeliveriesRoute = () => <Text>OI</Text>;
+const DeliveriesRoute = () => <Text>tesst</Text>;
 
 const ProfileRoute = () => <Text>Profile</Text>;
 
@@ -19,6 +19,8 @@ const Main = () => {
     {key: 'wallet', title: 'Carteira', icon: 'wallet'},
     {key: 'deliveries', title: 'Entregas', icon: 'package'},
     {key: 'profile', title: 'Perfil', icon: 'tag-text-outline'},
+    {key: 'pr', title: 'Perfil', icon: 'tag-text-outline'},
+
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
