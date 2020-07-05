@@ -18,11 +18,7 @@ const LoginFields = ({navigation}) => {
           <Text style={Style.textButton}> &gt;Esqueceu sua senha?</Text>
         </TouchableOpacity>
       </View>
-
-      <Divider style={{height: 5, backgroundColor: 'red'}} />
-      <Divider />
-      <Divider />
-
+    
       <Button
         style={[Style.fields]}
         mode="contained"
