@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.melilog">
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />  
     <uses-permission android:name="android.permission.INTERNET" />
     <application
       android:name=".MainApplication"
@@ -21,7 +22,7 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-      <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDpU3Jke8NJOy84X1l2bSPs7sJmuLceSgk" />
+      <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCDP5QZVHSJnRc-pbbLt2Zh74G7iSzNp_o" />
 
     </application>
 
