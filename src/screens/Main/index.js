@@ -6,7 +6,7 @@ const MapRoute = () => <Map />;
 
 const WalletRoute = () => <Text>Teste</Text>;
 
-const DeliveriesRoute = () => <Text>OI</Text>;
+const DeliveriesRoute = () => <Text>tesst</Text>;
 
 const ProfileRoute = () => <Text>Profile</Text>;
 
